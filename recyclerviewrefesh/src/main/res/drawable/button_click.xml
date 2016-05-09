@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@drawable/shape_resetup_press"
+        android:state_pressed="true"/>
+    <!-- pressed 被点击 -->
+
+    <item
+        android:drawable="@drawable/shape_resetup"/>
+    <!-- default 默认的 -->
+
+</selector>

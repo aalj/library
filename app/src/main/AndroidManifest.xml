@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.bestsnail">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+
+    <application
+        android:name=".ui.Library"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.MainActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.GuanCangActivity"
+            android:label="@string/title_activity_guan_cang"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".ui.SearchResultActivity"
+            android:label="@string/title_activity_search_result"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".ui.BookInfoActivity">
+        </activity>
+        <activity
+            android:name=".ui.LoginActivity"
+            android:label="@string/title_activity_login">
+        </activity>
+        <activity
+            android:name="com.karics.library.zxing.android.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <activity android:name=".ui.NewsActivity">
+        </activity>
+        <activity android:name=".ui.ZiYuanActivity">
+        </activity>
+        <activity android:name=".ui.NRInfoActivity">
+        </activity>
+        <activity android:name=".ui.LecturesActivity">
+        </activity>
+        <activity
+            android:name=".ui.LecturesInfoActivity"
+            android:launchMode="singleInstance">
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+
+
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:background="@color/colorPrimary"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+
+            android:text="登陆"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"/>
+        <!--android:layout_centerHorizontal="true"-->
+        <com.bestsnail.widget.CircleImageView
+            android:id="@+id/touxiang"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginBottom="40dp"
+            android:src="@mipmap/gg"/>
+
+        <ImageView
+            android:id="@+id/xiaoxi_ima"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignTop="@+id/bianji_ima"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_toLeftOf="@+id/touxiang"
+            android:layout_toStartOf="@+id/touxiang"
+            android:src="@mipmap/xiaoxi"/>
+
+        <ImageView
+            android:id="@+id/bianji_ima"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_toEndOf="@+id/touxiang"
+            android:layout_toRightOf="@+id/touxiang"
+            android:src="@mipmap/bianji"/>
+
+
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/grid_item"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:numColumns="3">
+
+
+    </GridView>
+
+
+</LinearLayout>

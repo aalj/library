@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.bestsnail.ui.LecturesInfoActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolashei"
+        android:background="#3F51B5">
+
+        <TextView
+            android:id="@+id/title_actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="资源动态"
+            android:textColor="@color/textclor"
+            android:textSize="22sp"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#FFEFF0F4"
+        android:scrollbars="horizontal">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#FFEFF0F4"
+            android:orientation="vertical">
+
+
+            <!-- 操作按钮部分 -->
+
+
+            <!-- 基本信息部分 -->
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10.0dp"
+                android:background="@drawable/panel_bg"
+                android:padding="20.0dip">
+
+                <TextView
+                    android:id="@+id/jaingzuo_name"
+                    style="@style/normalText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="我是图书名"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/relative_3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10.0dip"
+                android:background="@drawable/panel_bg"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/user_zuozhe"
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="10.0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10.0dp"
+                        android:gravity="center_vertical"
+                        android:text="主讲人："
+                        android:textColor="#FF7D899D"
+                        android:textSize="16.0sp">
+
+                    </TextView>
+                    <!-- 所在地 -->
+
+                    <TextView
+                        android:id="@+id/zhujiangren"
+                        style="@style/normalText.span"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/user_zuozhe"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_toRightOf="@id/user_zuozhe"
+                        android:text="kkkkk"
+                        android:textSize="16.0sp">
+                    </TextView>
+                </RelativeLayout>
+                <!-- 分隔条 -->
+
+                <View
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/horizontal_separation_line">
+                </View>
+                <!-- 网站 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/user_zhuti"
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10.0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10.0dp"
+                        android:gravity="center_vertical"
+                        android:text="讲座地址："
+                        android:textColor="#FF7D899D"
+                        android:textSize="16.0sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/address"
+                        style="@style/normalText.span"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/user_zhuti"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_toRightOf="@id/user_zhuti"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="lllllll"
+                        android:textSize="16.0sp">
+                    </TextView>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/horizontal_separation_line">
+                </View>
+                <!-- 网站 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/user_publishing_house"
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10.0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10.0dp"
+                        android:gravity="center_vertical"
+                        android:text="讲座时间："
+                        android:textColor="#FF7D899D"
+                        android:textSize="16.0sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/jiangzuotime"
+                        style="@style/normalText.span"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/user_publishing_house"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_toRightOf="@id/user_publishing_house"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="lllllll"
+                        android:textSize="16.0sp">
+                    </TextView>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/horizontal_separation_line">
+                </View>
+                <!-- 网站 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/user_publishing_house_time"
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10.0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10.0dp"
+                        android:gravity="center_vertical"
+                        android:text="讲座时长："
+                        android:textColor="#FF7D899D"
+                        android:textSize="16.0sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/timechang"
+                        style="@style/normalText.span"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/user_publishing_house_time"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_toRightOf="@id/user_publishing_house_time"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="lllllll"
+                        android:textSize="16.0sp">
+                    </TextView>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/horizontal_separation_line">
+                </View>
+                <!-- 网站 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/person_num"
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10.0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10.0dp"
+                        android:gravity="center_vertical"
+                        android:text="报名数："
+                        android:textColor="#FF7D899D"
+                        android:textSize="16.0sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/personnum"
+                        style="@style/normalText.span"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/person_num"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_toRightOf="@id/person_num"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="lllllll"
+                        android:textSize="16.0sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/personnum"
+                        android:layout_toEndOf="@+id/personnum"
+                        android:layout_toRightOf="@+id/personnum"
+                        android:text="/"/>
+
+                    <TextView
+                        android:id="@+id/zongrenhus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/textView6"
+                        android:layout_toRightOf="@+id/textView6"
+                        android:text="New Text"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/horizontal_separation_line">
+                </View>
+                <!-- 网站 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/user_isbn"
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10.0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10.0dp"
+                        android:gravity="center_vertical"
+                        android:text="主讲人介绍："
+                        android:textColor="#FF7D899D"
+                        android:textSize="16.0sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/person"
+                        style="@style/normalText.span"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/user_isbn"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_toRightOf="@id/user_isbn"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="lllllll"
+                        android:textSize="16.0sp">
+                    </TextView>
+                </RelativeLayout>
+
+
+                <!-- 网站 -->
+
+
+            </LinearLayout>
+
+            <!-- 自我描述部分 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center"
+                    android:text="内容摘要："/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10.0dip"
+                android:layout_weight="3.0"
+                android:background="@drawable/panel_bg"
+                android:padding="10.0dip">
+
+
+                <TextView
+                    android:id="@+id/book_address_list"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:cacheColorHint="#00000000"
+                    android:dividerHeight="1dip"
+                    android:fadeScrollbars="true"
+                    android:fastScrollEnabled="true"
+                    android:text=""/>
+
+            </RelativeLayout>
+            <!-- 按钮面板部分 -->
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

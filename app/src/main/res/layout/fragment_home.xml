@@ -1,0 +1,171 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:id="@+id/guancangsea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="#1AA758"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/library"/>
+
+                <TextView
+                    style="@style/homeText"
+                    android:layout_marginLeft="10dp"
+                    android:text="馆藏查询"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/xujie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="#0866AE"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/xujie"/>
+
+                <TextView
+                    style="@style/homeText"
+                    android:layout_marginTop="10dp"
+                    android:text="续借"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal"
+            android:padding="2.5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <LinearLayout
+                android:id="@+id/erweima"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="2.5dp"
+                android:layout_weight="1"
+                android:background="#E76E1F"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/erweima"/>
+
+                <TextView
+                    style="@style/homeText"
+                    android:layout_marginTop="10dp"
+                    android:text="二维码"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/jiangzuo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2.5dp"
+                android:layout_weight="1"
+                android:background="#008ACB"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/jiangzuo"/>
+
+                <TextView
+                    style="@style/homeText"
+                    android:layout_marginTop="10dp"
+                    android:text="讲座"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:id="@+id/tuijian"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="2.5dp"
+                android:layout_weight="2"
+                android:background="#219BB3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/tuijian"/>
+
+                <TextView
+                    style="@style/homeText"
+                    android:layout_marginTop="10dp"
+                    android:text="图书推荐"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ebook"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2.5dp"
+                android:layout_weight="1"
+                android:background="#1DA458"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ebook"/>
+
+                <TextView
+                    style="@style/homeText"
+                    android:layout_marginLeft="10dp"
+                    android:text="电子资源"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

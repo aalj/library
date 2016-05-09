@@ -1,0 +1,31 @@
+<!-- [ Mirror metadata ] generatedAt: 1461843735673 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/activity_main">
+        <info_fragment>
+            <!-- Replace this FrameLayout with a fragment like so:
+            <_content layout="@layout/my_fragment_layout">
+                <my_text_view>TextView in fragment</my_text_view>
+            </_content>
+            -->
+        </info_fragment>
+        <!-- ImageView Examples:
+        <ima_home src="@drawable/image_resource" />
+        <ima_home src="relative_path/image.jpg" /> -->
+        <ima_home/>
+        <!-- TextView Examples:
+        <tv_home text="@string/string_resource" />
+        <tv_home text="Text literal" textSize="14sp" /> -->
+        <tv_home/>
+        <ima_sousuo/>
+        <tv_sousuo/>
+        <ima_person/>
+        <tv_person/>
+        <ima_other/>
+        <tv_other/>
+    </_content>
+</screen>

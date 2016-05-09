@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/other_2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/all_tv"
+            style="@style/searchleibie"
+            android:text="书名"/>
+
+
+        <TextView
+            android:id="@+id/zuozh_tv"
+            style="@style/searchleibie"
+            android:text="作者"/>
+
+        <TextView
+            android:id="@+id/zhutici_tv"
+            style="@style/searchleibie"
+            android:text="主题词"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="@drawable/edit_biankuang"></Spinner>
+
+        <EditText
+            android:id="@+id/ed_guanjianzi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_biankuang"
+            android:hint="输入关键字"
+            android:paddingLeft="20dp"/>
+
+        <Button
+            android:id="@+id/sousuo_but"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="@drawable/button_click"
+            android:text="搜索"/>
+    </LinearLayout>
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/viewbackground"/>
+
+    <TextView
+        android:id="@+id/tab_FindFragment_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="热门图书"
+
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/background"/>
+
+</LinearLayout>
+
