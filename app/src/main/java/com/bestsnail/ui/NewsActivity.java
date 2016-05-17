@@ -35,6 +35,9 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * 图书馆新闻页面
+ */
 public class NewsActivity extends AppCompatActivity {
 
     public static final int FLAG = 1;

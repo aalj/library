@@ -144,16 +144,21 @@ public class GuanCangHeadAdapter extends BaseRecyclerAdapter<BookTable> {
             httpUtils.send(HttpMethod.POST, url, pra, new RequestCallBack<String>() {
                 @Override
                 public void onSuccess(ResponseInfo<String> responseInfo) {
-                    Type type = new TypeToken<List<BookTable>>() {
-                    }.getType();
-                    Gson gson =
-                            GetGson.mGetGson();
-                    List<BookTable> o = gson.fromJson(responseInfo.result, type);
-                    Intent intent = new Intent(ctx, SearchResultActivity.class);
-                    intent.putExtra("data", (Serializable) o);
-                    ctx.startActivity(intent);
+                    String result = responseInfo.result;
+                    if("[]".equals(result)){
+                        Toast.makeText(ctx, "没有相关的书籍记录", Toast.LENGTH_SHORT).show();
+                    }else {
+                        Type type = new TypeToken<List<BookTable>>() {
+                        }.getType();
+                        Gson gson =
+                                GetGson.mGetGson();
 
+                        List<BookTable> o = gson.fromJson(result, type);
+                        Intent intent = new Intent(ctx, SearchResultActivity.class);
+                        intent.putExtra("data", (Serializable) o);
+                        ctx.startActivity(intent);
 
+                    }
                 }
 
                 @Override

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.bestsnail.R;
 import com.bestsnail.bean.BookTable;
+import com.bestsnail.ui.EbookActivity;
 import com.bestsnail.ui.GuanCangActivity;
 import com.bestsnail.ui.LecturesActivity;
 import com.bestsnail.ui.LoginActivity;
@@ -32,6 +33,7 @@ import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 
 import java.io.Serializable;
 import java.lang.reflect.Type;
+import java.net.HttpURLConnection;
 import java.util.List;
 
 import butterknife.Bind;
@@ -78,7 +80,7 @@ public class HomeFragment extends Fragment implements HomeFragmentView {
             case R.id.guancangsea://跳转到馆藏查询
                 Intent intent = new Intent(getActivity(), GuanCangActivity.class);
                 getActivity().startActivity(intent);
-                Toast.makeText(getActivity(), "guancangsea", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "guancangsea", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.xujie://跳转到图书续借
                 Intent intent1 = new
@@ -86,12 +88,12 @@ public class HomeFragment extends Fragment implements HomeFragmentView {
                 intent1.putExtra("flags", XUJIE);
                 startActivity(intent1);
 //                startActivity(intent1);
-                Toast.makeText(getActivity(), "xujie", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "xujie", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.erweima://跳转到二维码查书
                 Intent intent2 = new Intent(getActivity(), CaptureActivity.class);
                 startActivityForResult(intent2, 0);
-                Toast.makeText(getActivity(), "erweima", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "erweima", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.jiangzuo://跳转到图书馆讲座列表页面
@@ -100,13 +102,14 @@ public class HomeFragment extends Fragment implements HomeFragmentView {
                 Toast.makeText(getActivity(), "jiangzuo", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tuijian://跳转到图书推荐页面
+                Toast.makeText(getActivity(), "请稍等正在准备数据", Toast.LENGTH_SHORT).show();
                 getRemenTushu();
-                Toast.makeText(getActivity(), "tuijian", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.ebook://跳转到图书推荐页面
+            case R.id.ebook://跳转到电子资源
+                Intent intent4 = new Intent(getActivity(), EbookActivity.class);
+                startActivity(intent4);
 
-
-                Toast.makeText(getActivity(), "ebook", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "ebook", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
@@ -121,6 +124,7 @@ public class HomeFragment extends Fragment implements HomeFragmentView {
 
     @Override
     public void lunBo() {
+        
 
     }
 

@@ -71,6 +71,8 @@
             android:name=".ui.LecturesInfoActivity"
             android:launchMode="singleInstance">
         </activity>
+        <activity android:name=".ui.EbookActivity">
+        </activity>
     </application>
 
 </manifest>

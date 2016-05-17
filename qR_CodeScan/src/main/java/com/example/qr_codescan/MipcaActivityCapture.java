@@ -1,5 +1,8 @@
 package com.example.qr_codescan;
 
+import java.io.IOException;
+import java.util.Vector;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
@@ -24,27 +27,12 @@ import com.mining.app.zxing.camera.CameraManager;
 import com.mining.app.zxing.decoding.CaptureActivityHandler;
 import com.mining.app.zxing.decoding.InactivityTimer;
 import com.mining.app.zxing.view.ViewfinderView;
-
-import java.io.IOException;
-import java.util.Vector;
-
 /**
  * Initial the camera
- *
  * @author Ryan.Tang
  */
 public class MipcaActivityCapture extends Activity implements Callback {
 
-    private static final float BEEP_VOLUME = 0.10f;
-    private static final long VIBRATE_DURATION = 200L;
-    /**
-     * When the beep has finished playing, rewind to queue up another one.
-     */
-    private final OnCompletionListener beepListener = new OnCompletionListener() {
-        public void onCompletion(MediaPlayer mediaPlayer) {
-            mediaPlayer.seekTo(0);
-        }
-    };
     private CaptureActivityHandler handler;
     private ViewfinderView viewfinderView;
     private boolean hasSurface;
@@ -53,11 +41,10 @@ public class MipcaActivityCapture extends Activity implements Callback {
     private InactivityTimer inactivityTimer;
     private MediaPlayer mediaPlayer;
     private boolean playBeep;
+    private static final float BEEP_VOLUME = 0.10f;
     private boolean vibrate;
 
-    /**
-     * Called when the activity is first created.
-     */
+    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,8 +107,7 @@ public class MipcaActivityCapture extends Activity implements Callback {
     }
 
     /**
-     * ����ɨ����
-     *
+     * 处理扫描结果
      * @param result
      * @param barcode
      */
@@ -131,7 +117,7 @@ public class MipcaActivityCapture extends Activity implements Callback {
         String resultString = result.getText();
         if (resultString.equals("")) {
             Toast.makeText(MipcaActivityCapture.this, "Scan failed!", Toast.LENGTH_SHORT).show();
-        } else {
+        }else {
             Intent resultIntent = new Intent();
             Bundle bundle = new Bundle();
             bundle.putString("result", resultString);
@@ -214,6 +200,8 @@ public class MipcaActivityCapture extends Activity implements Callback {
         }
     }
 
+    private static final long VIBRATE_DURATION = 200L;
+
     private void playBeepSoundAndVibrate() {
         if (playBeep && mediaPlayer != null) {
             mediaPlayer.start();
@@ -223,5 +211,14 @@ public class MipcaActivityCapture extends Activity implements Callback {
             vibrator.vibrate(VIBRATE_DURATION);
         }
     }
+
+    /**
+     * When the beep has finished playing, rewind to queue up another one.
+     */
+    private final OnCompletionListener beepListener = new OnCompletionListener() {
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            mediaPlayer.seekTo(0);
+        }
+    };
 
 }

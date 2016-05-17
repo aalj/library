@@ -1,0 +1,86 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/activity_ebook"
+    android:orientation="vertical">
+
+
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="35dp"
+                    tools:context="com.bestsnail.fragment.SousuoFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/kuaisusousuo"/>
+
+        <EditText
+            android:id="@+id/et_guanjianzi"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/radioGroup"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_biankuang"
+            android:hint="请输入关键字"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textColorHint="#BDC7D8"/>
+
+        <Button
+            android:id="@+id/but_kuaisusousuo"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/et_guanjianzi"
+            android:layout_alignRight="@+id/et_guanjianzi"
+            android:layout_below="@+id/et_guanjianzi"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_click"
+            android:text="搜索电子资源"
+            android:textColor="@android:color/white"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/all_rabut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+
+                android:checked="true"
+                android:text="全部"/>
+
+            <RadioButton
+                android:id="@+id/isbn_rabut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="ISBN"/>
+        </RadioGroup>
+
+
+    </RelativeLayout>
+</LinearLayout>

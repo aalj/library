@@ -239,6 +239,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             Intent intent1 = new Intent(LoginActivity.this, LecturesInfoActivity.class);
                             setResult(RESULT_OK, intent1);
                             finish();
+                        }else if (BookInfoActivity.CEOLLECTBOOK.equals(flags)) {
+                            Intent intent1 = new Intent(LoginActivity.this, BookInfoActivity.class);
+                            setResult(RESULT_OK, intent1);
+                            finish();
                         }
 
 

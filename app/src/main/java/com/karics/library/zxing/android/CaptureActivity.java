@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.bestsnail.R;
 import com.bestsnail.bean.BookTable;
 import com.bestsnail.ui.BookInfoActivity;
+import com.bestsnail.ui.EbookActivity;
 import com.bestsnail.utils.GetGson;
 import com.bestsnail.utils.GetHttp;
 import com.google.gson.Gson;
@@ -83,6 +84,11 @@ public final class CaptureActivity extends Activity implements
     }
 
     /**
+     * 用于标记当前需要做什么处理
+     */
+    int falg = 0;
+
+    /**
      * OnCreate中初始化一些辅助类，如InactivityTimer（休眠）、Beep（声音）以及AmbientLight（闪光灯）
      */
     @Override
@@ -94,7 +100,7 @@ public final class CaptureActivity extends Activity implements
         setContentView(R.layout.capture);
 
         hasSurface = false;
-
+        falg = getIntent().getIntExtra("falg", 0);
         inactivityTimer = new InactivityTimer(this);
         beepManager = new BeepManager(this);
 
@@ -202,7 +208,17 @@ public final class CaptureActivity extends Activity implements
 
             //通过扫描解析的到的二维码值查询图书然后跳转到图书详情页面
             String isbn = rawResult.getText();
-            mGetBookInfoByISBN(isbn);
+            if (falg == EbookActivity.FLAG) {
+                    Intent intent = new Intent(this,EbookActivity.class);
+                intent.putExtra("isbn",isbn);
+                setResult(RESULT_OK,intent);
+                finish();
+
+            } else {
+                mGetBookInfoByISBN(isbn);
+
+            }
+
 
             //下面是返回值到调用二维码扫描的页面
 //			Intent intent = getIntent();

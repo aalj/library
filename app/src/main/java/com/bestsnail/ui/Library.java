@@ -24,5 +24,6 @@ public class Library extends Application {
         student = new Student();
 
         super.onCreate();
+//        LeakCanary.install(this);
     }
 }

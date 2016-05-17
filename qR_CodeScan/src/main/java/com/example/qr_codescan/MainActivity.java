@@ -25,9 +25,7 @@ import java.net.URLEncoder;
 public class MainActivity extends Activity {
     private final static int SCANNIN_GREQUEST_CODE = 1;
     private final static int SCANNIN_GREQUEST_CODE2 = 2;
-    /**
-     * ��ʾɨ����
-     */
+
 
     private TextView isbn_info;
     private TextView suoshuhao_info;
@@ -35,9 +33,7 @@ public class MainActivity extends Activity {
     private EditText name;
     private EditText zuozhe;
     private EditText chubanshe_et;
-    /**
-     * ��ʾɨ���ĵ�ͼƬ
-     */
+
     private ImageView mImageView;
 
 
@@ -53,8 +49,7 @@ public class MainActivity extends Activity {
         chubanshe_et = (EditText) findViewById(R.id.chubanshe_et);
 
 
-        //�����ť��ת����ά��ɨ����棬�����õ���startActivityForResult��ת
-        //ɨ������֮������ý���
+
         Button mButton = (Button) findViewById(R.id.isbn);
         Button mButton2 = (Button) findViewById(R.id.suoshuhao);
         Button submit = (Button) findViewById(R.id.submit);
@@ -70,7 +65,7 @@ public class MainActivity extends Activity {
                 HttpUtils
                         httpUtils = new HttpUtils();
 
-                String url = "http://192.168.1.100:8080/LibraryWeb/Savebook";
+                String url = "http://www.bestsnail.com:8965/LibraryWeb/Savebook";
                 RequestParams par = new RequestParams();
                 try {
                     par.addBodyParameter("isbn_infos", URLEncoder.encode(isbn_infos, "utf-8"));
@@ -132,14 +127,14 @@ public class MainActivity extends Activity {
             case SCANNIN_GREQUEST_CODE:
                 if (resultCode == RESULT_OK) {
                     Bundle bundle = data.getExtras();
-                    //��ʾɨ�赽������
+
                     isbn_info.setText(bundle.getString("result"));
                 }
                 break;
             case SCANNIN_GREQUEST_CODE2:
                 if (resultCode == RESULT_OK) {
                     Bundle bundle = data.getExtras();
-                    //��ʾɨ�赽������
+
                     suoshuhao_info.setText(bundle.getString("result"));
                 }
                 break;
