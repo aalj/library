@@ -4,29 +4,37 @@
     api-level="19"
     density="xhdpi"
     format="7"
-    timestamp="2614325656822" >
+    timestamp="46130107921956"
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="8275" />
+        duration="648" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="36" />
     <task
         name="instant-run-transform"
-        duration="2182" />
+        duration="74" />
     <task
         name="verifier"
-        duration="426" />
+        duration="6" />
 
     <artifact
-        location="G:\biye\code\library\qR_CodeScan\build\outputs\apk\qR_CodeScan-debug.apk"
-        type="MAIN" />
+        location="G:\biye\code\library\qR_CodeScan\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
-    <build timestamp="2614325656822" >
+    <build timestamp="46088855938673" >
         <artifact
             location="G:\biye\code\library\qR_CodeScan\build\outputs\apk\qR_CodeScan-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="46130107921956"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="G:\biye\code\library\qR_CodeScan\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

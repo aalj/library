@@ -5,7 +5,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:orientation="vertical">
 
@@ -22,10 +22,10 @@
             android:id="@+id/chubanshe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="21dp"
-            android:text="出版社"/>
+            android:layout_marginTop="36dp"
+            android:text="出版社"
+            android:layout_below="@+id/zuozhe"
+            android:layout_alignParentLeft="true"/>
 
         <EditText
             android:id="@+id/chubanshe_et"
@@ -64,8 +64,37 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
+            android:layout_below="@+id/name"
+            android:layout_marginTop="26dp"
             android:text="作者"/>
+
+        <TextView
+            android:id="@+id/address_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/chubanshe_et"
+            android:layout_marginTop="36dp"
+            android:text="馆藏地"/>
+
+        <EditText
+            android:id="@+id/dizhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/address_tv"
+            android:layout_alignTop="@+id/address_tv"
+            android:layout_toLeftOf="@+id/suiji"
+            android:layout_toRightOf="@+id/address_tv"
+            android:hint="随机生成地址吗"/>
+
+        <Button
+            android:id="@+id/suiji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/address_tv"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/address_tv"
+            android:text="随机生成"/>
 
     </RelativeLayout>
 
@@ -78,9 +107,9 @@
             android:id="@+id/isbn_info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="5"
             android:lines="2"
-            android:text="123"
+            android:text="ISBN号"
             android:textColor="@android:color/black"
             android:textSize="16sp"/>
 
@@ -88,7 +117,7 @@
             android:id="@+id/isbn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:text="ISBN"/>
     </LinearLayout>
 
@@ -101,9 +130,9 @@
             android:id="@+id/suoshuhao_info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="5"
             android:lines="2"
-            android:text="123"
+            android:text="索书号"
             android:textColor="@android:color/black"
             android:textSize="16sp"/>
 
@@ -111,15 +140,30 @@
             android:id="@+id/suoshuhao"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:text="索书号"/>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/submit"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        android:text="提交"/>
+        <Button
+            android:id="@+id/qingkong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="清空"/>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="提交"/>
+    </LinearLayout>
 
 </LinearLayout>
