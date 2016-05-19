@@ -21,8 +21,7 @@ public class FootLoadScrollListener extends RecyclerView.OnScrollListener {
         if (newState == RecyclerView.SCROLL_STATE_IDLE) {
             return ((LinearLayoutManager) recyclerView.getLayoutManager())
                     .findLastCompletelyVisibleItemPosition()
-                    == recyclerView.getAdapter().getItemCount() - 1
-                    ;
+                    == recyclerView.getAdapter().getItemCount() - 1;
 
         }
 

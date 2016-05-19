@@ -10,6 +10,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.lidroid.xutils.BitmapUtils;
+import com.lidroid.xutils.bitmap.core.BitmapSize;
+
 /**
  * Created by tlh on 2016/2/15.
  */
@@ -83,6 +86,18 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         View view = findViewById(viewId);
         view.setBackgroundResource(resId);
         return this;
+    }
+
+
+    public RecyclerViewHolder SetUrlImage(int resID, String url) {
+        BitmapUtils bitmapUtils = new BitmapUtils(mContext);
+        BitmapSize maxSi=new BitmapSize(240, 120);
+        bitmapUtils.configDefaultBitmapMaxSize(maxSi);
+        ImageView ima = (ImageView) getView(resID);
+        // 加载网络图片
+        bitmapUtils.display(ima, url);
+        return this;
+
     }
 
     /**

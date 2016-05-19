@@ -2,39 +2,31 @@
 <instant-run
     abi="armeabi-v7a,armeabi"
     api-level="19"
-    density="xhdpi"
+    density="xxhdpi"
     format="7"
-    timestamp="46130107921956"
-    verifier="COMPATIBLE" >
+    timestamp="89544153834495" >
 
     <task
         name="javac"
-        duration="648" />
+        duration="2817" />
     <task
         name="instant-run-dex"
-        duration="36" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="74" />
+        duration="801" />
     <task
         name="verifier"
-        duration="6" />
+        duration="952" />
 
     <artifact
-        location="G:\biye\code\library\qR_CodeScan\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="G:\biye\code\library\qR_CodeScan\build\outputs\apk\qR_CodeScan-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="46088855938673" >
+    <build timestamp="89544153834495" >
         <artifact
             location="G:\biye\code\library\qR_CodeScan\build\outputs\apk\qR_CodeScan-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="46130107921956"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="G:\biye\code\library\qR_CodeScan\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

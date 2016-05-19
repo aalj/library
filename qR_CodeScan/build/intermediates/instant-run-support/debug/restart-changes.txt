@@ -1,1 +1,0 @@
-CHANGED,G:\biye\code\library\qR_CodeScan\build\intermediates\transforms\instantRun\debug\folders\1\5\main\com\example\qr_codescan\MainActivity$1.class
