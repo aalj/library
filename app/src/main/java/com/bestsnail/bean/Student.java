@@ -13,6 +13,7 @@
 
 package com.bestsnail.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -26,7 +27,7 @@ import java.util.Date;
  * @see
  *
  */
-public class Student {
+public class Student implements Serializable{
 
     private int stu_id;
     private String stu_name;

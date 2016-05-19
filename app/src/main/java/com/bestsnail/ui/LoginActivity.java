@@ -32,6 +32,7 @@ import android.widget.Toast;
 import com.bestsnail.R;
 import com.bestsnail.bean.Student;
 import com.bestsnail.fragment.HomeFragment;
+import com.bestsnail.fragment.PersonFragment;
 import com.bestsnail.utils.GetGson;
 import com.bestsnail.utils.GetHttp;
 import com.google.gson.Gson;
@@ -243,7 +244,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             Intent intent1 = new Intent(LoginActivity.this, BookInfoActivity.class);
                             setResult(RESULT_OK, intent1);
                             finish();
+                        }else if (PersonFragment.PERSON.equals(flags)) {
+                            Intent intent1 = new Intent(LoginActivity.this, MainActivity.class);
+                            setResult(RESULT_OK, intent1);
+                            finish();
                         }
+                        finish();
 
 
                     }
