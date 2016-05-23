@@ -55,4 +55,19 @@ onScrollStateChanged(RecyclerView recyclerView, int newState) 该方法是在rec
 
 
 
+5/22/2016 8:17:37 PM 
+
+
+>#还没有完成的功能
+
+1. 学生信息修改，
+2. 收藏
+3. 首页图片轮播
+4. 关于我们
+5. 图片上传
+6. 电子资源二位码扫描结果显示没有完善
+7. 首页续借条状没有完善
+
+
+
 
