@@ -13,9 +13,11 @@ import android.widget.Toast;
 
 import com.bestsnail.R;
 import com.bestsnail.bean.BookTable;
+import com.bestsnail.ui.BorrowBookXuJieActivityo;
 import com.bestsnail.ui.EbookActivity;
 import com.bestsnail.ui.GuanCangActivity;
 import com.bestsnail.ui.LecturesActivity;
+import com.bestsnail.ui.Library;
 import com.bestsnail.ui.LoginActivity;
 import com.bestsnail.ui.SearchResultActivity;
 import com.bestsnail.utils.GetHttp;
@@ -84,8 +86,17 @@ public class HomeFragment extends Fragment implements HomeFragmentView {
                 break;
             case R.id.xujie://跳转到图书续借
                 Intent intent1 = new
-                        Intent(getActivity(), LoginActivity.class);
-                intent1.putExtra("flags", XUJIE);
+                        Intent();
+                if(((Library)getActivity().getApplication()).getStudent().getStu_id()>0){
+                    intent1.setClass(getActivity(), BorrowBookXuJieActivityo.class);
+                }else{
+
+                    intent1.setClass(getActivity(), LoginActivity.class);
+                    intent1.putExtra("flags", XUJIE);
+
+                }
+
+
                 startActivity(intent1);
 //                startActivity(intent1);
 //                Toast.makeText(getActivity(), "xujie", Toast.LENGTH_SHORT).show();
