@@ -1,9 +1,9 @@
 package com.bestsnail.ui;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -34,7 +34,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class BorrowBookActivityo extends AppCompatActivity {
+public class BorrowBookXuJieActivityo extends AppCompatActivity {
     @Bind(R.id.toolbar)
     Toolbar _mToolbar;
     @Bind(R.id.recyclerView)
@@ -103,12 +103,12 @@ public class BorrowBookActivityo extends AppCompatActivity {
         madapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View itemView, int pos) {
-                Intent  intent = new Intent(BorrowBookActivityo.this,BrrowBookInfoActivity.class);
+                Intent  intent = new Intent(BorrowBookXuJieActivityo.this,BrrowBookInfoActivity.class);
                 intent.putExtra("falg",mlist.get(pos));
                 startActivity(intent);
                 finish();
                 //TODO 每个item的点击时间
-                Toast.makeText(BorrowBookActivityo.this, "pos:" + pos, Toast.LENGTH_SHORT).show();
+                Toast.makeText(BorrowBookXuJieActivityo.this, "pos:" + pos, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -124,7 +124,7 @@ public class BorrowBookActivityo extends AppCompatActivity {
                             page++;
                             ((BorrowBookLoadMoreAdapter) madapter).setFooterStatus(BorrowBookLoadMoreAdapter.LOADING);//更新正在拼命加载文字
                             HttpUtils httpUtils = new HttpUtils();
-                            String url = GetHttp.getHttpConnetion() + "BorrowingBookServlet";
+                            String url = GetHttp.getHttpConnetion() + "BorrowingBookXuxJieServlet";
                             RequestParams pre = new RequestParams();
                             pre.addBodyParameter("page", page + "");
                             pre.addBodyParameter("stu_id",stu_id+"");
@@ -154,7 +154,7 @@ public class BorrowBookActivityo extends AppCompatActivity {
                                 }
                             });
                         } else {
-                            Toast.makeText(BorrowBookActivityo.this, "没有更多数据", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(BorrowBookXuJieActivityo.this, "没有更多数据", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -166,7 +166,7 @@ public class BorrowBookActivityo extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 HttpUtils httpUtils = new HttpUtils();
-                String url = GetHttp.getHttpConnetion() + "BorrowingBookServlet";
+                String url = GetHttp.getHttpConnetion() + "BorrowingBookXuxJieServlet";
                 RequestParams pre = new RequestParams();
                 pre.addBodyParameter("page", "1");
                 pre.addBodyParameter("stu_id", stu_id + "");
@@ -196,7 +196,7 @@ public class BorrowBookActivityo extends AppCompatActivity {
 
                     @Override
                     public void onFailure(HttpException error, String msg) {
-                        Toast.makeText(BorrowBookActivityo.this, "请检查网络", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BorrowBookXuJieActivityo.this, "请检查网络", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -208,7 +208,7 @@ public class BorrowBookActivityo extends AppCompatActivity {
      */
     private void fistLoad() {
         HttpUtils httpUtils = new HttpUtils();
-        String url = GetHttp.getHttpConnetion() + "BorrowingBookServlet";
+        String url = GetHttp.getHttpConnetion() + "BorrowingBookXuxJieServlet";
         RequestParams pre = new RequestParams();
         pre.addBodyParameter("page", "1");
         pre.addBodyParameter("stu_id", stu_id + "");
@@ -238,7 +238,7 @@ public class BorrowBookActivityo extends AppCompatActivity {
 
             @Override
             public void onFailure(HttpException error, String msg) {
-                Toast.makeText(BorrowBookActivityo.this, "请检查网络", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BorrowBookXuJieActivityo.this, "请检查网络", Toast.LENGTH_SHORT).show();
 
             }
 

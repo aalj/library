@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="wrap_content"
+              android:layout_width="match_parent"
               android:layout_height="fill_parent"
-              android:background="@color/body_background"
+              android:background="#FFEFF0F4"
               android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
+        android:layout_weight="0"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolashei"
@@ -20,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="借阅历史"
+            android:text="图书推荐"
             android:textColor="@color/textclor"
             android:textSize="22sp"/>
 
@@ -31,9 +32,11 @@
 
 
     <ScrollView
+        android:layout_weight="1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="#FFEFF0F4"
+        android:layout_marginTop="20dp"
         android:scrollbars="horizontal">
 
         <LinearLayout
@@ -42,7 +45,7 @@
             android:background="#FFEFF0F4"
             android:orientation="vertical">
 
-            <ImageView
+            ImageView
                 android:id="@+id/book_ima"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -54,25 +57,10 @@
 
             <!-- 基本信息部分 -->
 
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10.0dp"
-                android:background="@drawable/panel_bg"
-                android:padding="20.0dip">
-
-                <TextView
-                    android:id="@+id/book_name"
-                    style="@style/normalText"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="我是图书名"/>
-            </RelativeLayout>
-
             <LinearLayout
                 android:id="@+id/relative_3"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="10.0dip"
                 android:background="@drawable/panel_bg"
                 android:orientation="vertical">
@@ -92,24 +80,24 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10.0dp"
                         android:gravity="center_vertical"
-                        android:text="作者："
+                        android:text="书名："
                         android:textColor="#FF7D899D"
                         android:textSize="16.0sp">
 
                     </TextView>
                     <!-- 所在地 -->
 
-                    <TextView
+                    <EditText
                         android:id="@+id/zuozhe"
-                        style="@style/normalText.span"
-                        android:layout_width="wrap_content"
+                        style="@style/normalText.span_e"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@id/user_zuozhe"
                         android:layout_marginLeft="10.0dip"
                         android:layout_toRightOf="@id/user_zuozhe"
-                        android:text="kkkkk"
-                        android:textSize="16.0sp">
-                    </TextView>
+                        android:hint="输入推荐的书名"
+                        android:textSize="16.0sp"/>
+
                 </RelativeLayout>
                 <!-- 分隔条 -->
 
@@ -121,6 +109,40 @@
                     android:background="@drawable/horizontal_separation_line">
                 </View>
                 <!-- 网站 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/user_zhuti"
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10.0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10.0dp"
+                        android:gravity="center_vertical"
+                        android:text="作者："
+                        android:textColor="#FF7D899D"
+                        android:textSize="16.0sp">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/zhiti"
+                        style="@style/normalText.span_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/user_zhuti"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_toRightOf="@id/user_zhuti"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:hint="输入该书作者"
+                        android:textSize="16.0sp">
+                    </EditText>
+                </RelativeLayout>
 
                 <View
                     android:layout_width="fill_parent"
@@ -143,25 +165,25 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10.0dp"
                         android:gravity="center_vertical"
-                        android:text="借阅时间："
+                        android:text="出版社："
                         android:textColor="#FF7D899D"
                         android:textSize="16.0sp">
 
                     </TextView>
 
-                    <TextView
+                    <EditText
                         android:id="@+id/chubanshe"
-                        style="@style/normalText.span"
-                        android:layout_width="wrap_content"
+                        style="@style/normalText.span_e"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@+id/user_publishing_house"
                         android:layout_marginLeft="10.0dip"
                         android:layout_toRightOf="@id/user_publishing_house"
                         android:gravity="center_vertical"
                         android:singleLine="true"
-                        android:text="lllllll"
+                        android:hint="输入该书的出版社"
                         android:textSize="16.0sp">
-                    </TextView>
+                    </EditText>
                 </RelativeLayout>
 
                 <View
@@ -172,60 +194,22 @@
                 </View>
                 <!-- 网站 -->
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/user_publishing_house_time"
-                        style="@style/normalText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10.0dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10.0dp"
-                        android:gravity="center_vertical"
-                        android:text="还书时间："
-                        android:textColor="#FF7D899D"
-                        android:textSize="16.0sp">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/chubanshijian"
-                        style="@style/normalText.span"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignTop="@+id/user_publishing_house_time"
-                        android:layout_marginLeft="10.0dip"
-                        android:layout_toRightOf="@id/user_publishing_house_time"
-                        android:gravity="center_vertical"
-                        android:singleLine="true"
-                        android:text="lllllll"
-                        android:textSize="16.0sp">
-                    </TextView>
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1.0dip"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/horizontal_separation_line">
-                </View>
                 <!-- 网站 -->
 
-                <RelativeLayout
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:layout_weight="0"
                         android:id="@+id/user_isbn"
                         style="@style/normalText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10.0dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10.0dp"
+
                         android:gravity="center_vertical"
                         android:text="ISBN："
                         android:textColor="#FF7D899D"
@@ -233,84 +217,40 @@
 
                     </TextView>
 
-                    <TextView
+                    <EditText
+                        android:layout_weight="0.74"
                         android:id="@+id/isbn"
-                        style="@style/normalText.span"
+                        android:layout_marginLeft="10dp"
+                        style="@style/normalText.span_e"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@+id/user_isbn"
-                        android:layout_marginLeft="10.0dip"
-                        android:layout_toRightOf="@id/user_isbn"
                         android:gravity="center_vertical"
                         android:singleLine="true"
-                        android:text="lllllll"
-                        android:textSize="16.0sp">
-                    </TextView>
-                </RelativeLayout>
+                        android:hint="输入该书的ISBN号"
+                        android:textSize="16.0sp"
 
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1.0dip"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/horizontal_separation_line">
-                </View>
+                        android:layout_toRightOf="@+id/user_isbn"
+                        android:layout_toLeftOf="@+id/button"
+                        android:layout_toStartOf="@+id/button">
+                    </EditText>
 
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1.0dip"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/horizontal_separation_line">
-                </View>
+                    <Button
+                        android:layout_weight="0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:text="扫描"
+                        android:id="@+id/button"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"/>
+                </LinearLayout>
+
+
+
+
                 <!-- 网站 -->
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/user_category_number"
-                        style="@style/normalText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10.0dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10.0dp"
-                        android:gravity="center_vertical"
-                        android:text="馆藏数："
-                        android:textColor="#FF7D899D"
-                        android:textSize="16.0sp">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/guancangshu"
-                        style="@style/normalText.span"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignTop="@+id/user_category_number"
-                        android:layout_marginLeft="10.0dip"
-                        android:layout_toRightOf="@id/user_category_number"
-                        android:gravity="center_vertical"
-                        android:singleLine="true"
-                        android:text="lllllll"
-                        android:textSize="16.0sp">
-                    </TextView>
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1.0dip"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/horizontal_separation_line">
-                </View>
-                <!-- 网站 -->
-
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1.0dip"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/horizontal_separation_line">
-                </View>
                 <!-- 网站 -->
 
                 <!-- 网站 -->
@@ -318,11 +258,16 @@
 
             </LinearLayout>
 
-            <!-- 自我描述部分 -->
 
 
 
         </LinearLayout>
     </ScrollView>
+    <Button
+        android:id="@+id/submit"
+        android:layout_weight="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交推荐"/>
 
 </LinearLayout>

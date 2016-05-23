@@ -1,14 +1,12 @@
 package com.bestsnail.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
 import com.bestsnail.R;
 import com.bestsnail.bean.BorrowTable;
 import com.bestsnail.utils.DateUtils;
-import com.lidroid.xutils.BitmapUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -35,6 +33,11 @@ public class BorrowHistroyLoadMoreAdapter extends BaseRecyclerAdapter<BorrowTabl
         this.ctx = ctx;
     }
 
+    /**
+     *
+     * @param viewType 通过重写getItemViewType（）设置，默认item是0
+     * @return
+     */
     @Override
     protected int getItemLayoutId(int viewType) {
         return R.layout.borrow_cardview_item;

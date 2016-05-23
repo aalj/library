@@ -88,7 +88,7 @@ public class MainActivity extends Activity {
                     HttpUtils
                             httpUtils = new HttpUtils();
 
-                    String url = "http://192.168.1.104:8080/LibraryWeb/Savebook";
+                    String url = "http://192.168.1.108:8080/LibraryWeb/Savebook";
 //                String url = "http://www.bestsnail.com:8965/LibraryWeb/Savebook";
                     RequestParams par = new RequestParams();
                     try {

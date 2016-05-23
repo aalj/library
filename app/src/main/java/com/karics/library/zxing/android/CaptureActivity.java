@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.bestsnail.R;
 import com.bestsnail.bean.BookTable;
 import com.bestsnail.ui.BookInfoActivity;
+import com.bestsnail.ui.BookRecommendActivity;
 import com.bestsnail.ui.EbookActivity;
 import com.bestsnail.utils.GetGson;
 import com.bestsnail.utils.GetHttp;
@@ -214,7 +215,12 @@ public final class CaptureActivity extends Activity implements
                 setResult(RESULT_OK,intent);
                 finish();
 
-            } else {
+            }else if(falg== BookRecommendActivity.RECOMMENDERWEIMA){
+                Intent intent = new Intent(this,EbookActivity.class);
+                intent.putExtra("isbn",isbn);
+                setResult(RESULT_OK,intent);
+                finish();
+            }else {
                 mGetBookInfoByISBN(isbn);
 
             }
@@ -237,6 +243,7 @@ public final class CaptureActivity extends Activity implements
         RequestParams pre = new RequestParams();
         try {
             pre.addBodyParameter("isbn", URLEncoder.encode(isbn, "utf-8"));
+            pre.addBodyParameter("temp", getIntent().getIntExtra("temp",-1)+"" );
 
             httpUtils.send(HttpMethod.POST, url, pre, new RequestCallBack<String>() {
                 @Override

@@ -9,12 +9,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+        <com.bestsnail.widget.AdverView
+            android:id="@+id/ke_yi_aderview"
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:orientation="vertical">
-
-        </LinearLayout>
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+        </com.bestsnail.widget.AdverView>
 
         <LinearLayout
             android:layout_width="match_parent"

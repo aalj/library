@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,6 +67,10 @@ public class BookInfoActivity extends AppCompatActivity {
     BookTable book = null;
     @Bind(R.id.toolbar)
     Toolbar _mToolbar;
+    @Bind(R.id.dibu)
+    LinearLayout _mDibu;
+    @Bind(R.id.biaomina)
+    LinearLayout _mBiaomina;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,54 +106,59 @@ public class BookInfoActivity extends AppCompatActivity {
     private void initData() {
         book = (BookTable) getIntent().getSerializableExtra("data");
 
+        if (book.getBook_id() > 0) {
+            _mDibu.setVisibility(View.INVISIBLE);
+            _mBiaomina.setVisibility(View.VISIBLE);
+            BitmapUtils bitmapUtils = new BitmapUtils(this);
+            String book_image = book.getBook_image();
+            if (book_image != null) {
 
-        BitmapUtils bitmapUtils = new BitmapUtils(this);
-        String book_image = book.getBook_image();
-        if (book_image != null) {
-
-            bitmapUtils.display(_mBookIma, book.getBook_image());
-        }
+                bitmapUtils.display(_mBookIma, book.getBook_image());
+            }
 
 
-        _mBookName.setText(book.getBook_name());
-        _mZuozhe.setText(book.getBook_author());
-        _mZhiti.setText(book.getBook_keywords());
+            _mBookName.setText(book.getBook_name());
+            _mZuozhe.setText(book.getBook_author());
+            _mZhiti.setText(book.getBook_keywords());
 
-        _mChubanshe.setText(book.getBook_publishing_house());
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy");
-        Date book_publishing_house_time =
-                book.getBook_publishing_house_time();
-        if (book_publishing_house_time != null) {
+            _mChubanshe.setText(book.getBook_publishing_house());
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy");
+            Date book_publishing_house_time =
+                    book.getBook_publishing_house_time();
+            if (book_publishing_house_time != null) {
 
-            _mChubanshijian.setText(simpleDateFormat.format(book.getBook_publishing_house_time()));
+                _mChubanshijian.setText(simpleDateFormat.format(book.getBook_publishing_house_time()));
+            } else {
+                _mChubanshijian.setText("出版时间不详");
+
+            }
+
+            _mIsbn.setText(book.getBook_isbn() + "");
+            _mSuoshuhao.setText(book.getBook_category_number());
+            int book_numshu = book.getBook_num();
+            _mGuancangshu.setText(book_numshu + "");
+
+            if (book_numshu - book.getBook_borrow_num() > 0) {
+                _mKejie.setText("图书可借");
+            } else {
+                _mKejie.setText("当前图书已经全部借出。");
+
+            }
+            _mKejie.setTextColor(0xffff0000);
+            _mGuacangdi.setText(book.getLlLibraryAddressTable().getLc_name());
+            String book_introduction = book.getBook_introduction();
+            if (book_introduction != null && book_introduction.length() > 0) {
+                _mBookAddressList.setText(book_introduction);
+
+            } else {
+                _mBookAddressList.setText("暂无书籍介绍");
+
+            }
+
         } else {
-            _mChubanshijian.setText("出版时间不详");
-
+            _mDibu.setVisibility(View.VISIBLE);
+            _mBiaomina.setVisibility(View.INVISIBLE);
         }
-
-        _mIsbn.setText(book.getBook_isbn() + "");
-        _mSuoshuhao.setText(book.getBook_category_number());
-        int book_numshu = book.getBook_num();
-        _mGuancangshu.setText(book_numshu + "");
-
-        if (book_numshu - book.getBook_borrow_num() > 0) {
-            _mKejie.setText("图书可借");
-        } else {
-            _mKejie.setText("当前图书已经全部借出。");
-
-        }
-        _mKejie.setTextColor(0xffff0000);
-        _mGuacangdi.setText(book.getLlLibraryAddressTable().getLc_name());
-        String book_introduction = book.getBook_introduction();
-        if (book_introduction != null && book_introduction.length() > 0) {
-            _mBookAddressList.setText(book_introduction);
-
-        } else {
-            _mBookAddressList.setText("暂无书籍介绍");
-
-        }
-
-
     }
 
     @Override
@@ -174,7 +184,7 @@ public class BookInfoActivity extends AppCompatActivity {
             RequestParams pre = new RequestParams();
             pre.addBodyParameter("stu_id", student.getStu_id() + "");
             pre.addBodyParameter("book_id", book.getBook_id() + "");
-            httpUtils.send( HttpMethod.POST, url, pre, new RequestCallBack<String>() {
+            httpUtils.send(HttpMethod.POST, url, pre, new RequestCallBack<String>() {
 
 
                 @Override

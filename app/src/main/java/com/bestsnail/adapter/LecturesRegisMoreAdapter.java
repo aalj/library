@@ -1,74 +1,52 @@
 package com.bestsnail.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.bestsnail.R;
-import com.bestsnail.bean.BorrowTable;
-import com.bestsnail.utils.DateUtils;
+import com.bestsnail.bean.LecturesRegistrationTable;
+import com.bestsnail.bean.LecturesTable;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**
- * 作者：liang on 2016/5/18 14:42
+ * 作者：liang on 2016/5/9 16:10
  */
-public class BorrowBookLoadMoreAdapter extends BaseRecyclerAdapter<BorrowTable> {
+public class LecturesRegisMoreAdapter extends BaseRecyclerAdapter<LecturesRegistrationTable> {
     public static final int PULL_TO_LOAD_MORE = 0;
     public static final int LOADING = 1;
     public static final int NO_MORE = 2;
     public static final int NOMORE = 3;
     private int mFooterStatus = PULL_TO_LOAD_MORE;
-    Context ctx;
 
-    /**
-     * 通过构造函数能够得到需要加载的数据
-     *
-     * @param ctx
-     * @param list
-     */
-    public BorrowBookLoadMoreAdapter(Context ctx, List<BorrowTable> list) {
+    public LecturesRegisMoreAdapter(Context ctx, List<LecturesRegistrationTable> list) {
         super(ctx, list);
-        this.ctx = ctx;
     }
 
     @Override
-    protected int getItemLayoutId(int viewType) {
-        return R.layout.borrow_cardview_item;
+    public int getItemLayoutId(int viewType) {
+        return R.layout.item_cardview;
     }
 
     @Override
-    protected void bindData(RecyclerViewHolder holder, int position, BorrowTable item) {
-        //图片加载数据存在问题，所以延后实现图片
-        //TODO
-//        holder.SetUrlImage(R.id.imageView3,item.getBook().getBook_image());
+    public void bindData(RecyclerViewHolder holder, int position, LecturesRegistrationTable item) {
+        //调用holder.getView(),getXXX()方法根据id得到控件实例，进行数据绑定即可
+        holder.setText(R.id.tv_num, item.getLecturesTable().getLec_title());
+        holder.setText(R.id.author_tv, "主讲人：");
+        holder.setText(R.id.textView5, "开讲时间：");
 
-        holder.setText(R.id.id, item.getBook().getBook_name());
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        holder.setText(R.id.borrowTime, simpleDateFormat.format(item.getBorrow_time()));
-//        holder.setText(R.id.remainTime, simpleDateFormat.format(item.getRemand_time()));
-        holder.setText(R.id.content, item.getBook().getBook_isbn());
-        holder.getView(R.id.textView10).setVisibility(View.GONE);
-        //用于计算借阅是否超期
-        int betweenDay = DateUtils.getBetweenDay(new Date(System.currentTimeMillis()), item.getBorrow_time());
-        holder.getView(R.id.ischaqi).setVisibility(View.VISIBLE);
-        holder.setText(R.id.ischaqi, betweenDay + " 天");
-
-
+        holder.setText(R.id.author, item.getLecturesTable().getLec_person());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        holder.setText(R.id.time, simpleDateFormat.format(item.getLecturesTable().getLec_time()));
     }
 
-
-    //加载脚布局
     @Override
     protected int getFooterLayoutId() {
         return R.layout.footer_load_more;
     }
 
-    //加载脚部数据
     @Override
     protected void bindFooter(RecyclerViewHolder holder, int position) {
         ProgressBar progressBar = (ProgressBar) holder.getView(R.id.progressBar);

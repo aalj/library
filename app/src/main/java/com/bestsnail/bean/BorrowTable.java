@@ -29,9 +29,29 @@ import java.util.Date;
  */
 public class BorrowTable implements Serializable{
 	private int borrow_id;
-	
+	private int borrow_num;
+
+	public void setBorrow_num(int borrow_num) {
+		this.borrow_num = borrow_num;
+	}
+
+	public int getBorrow_num() {
+		return borrow_num;
+	}
+
 	private Student student;
 	private BookTable book;
+
+	public BorrowTable(int borrow_id, int borrow_num, Student student, BookTable book, Date borrow_time, Date remand_time, int borrow_is) {
+		this.borrow_id = borrow_id;
+		this.borrow_num = borrow_num;
+		this.student = student;
+		this.book = book;
+		this.borrow_time = borrow_time;
+		this.remand_time = remand_time;
+		this.borrow_is = borrow_is;
+	}
+
 	private Date borrow_time;
 	@Override
 	public String toString() {
@@ -47,16 +67,7 @@ public class BorrowTable implements Serializable{
 
 	
 
-	public BorrowTable(int borrow_id, Student student, BookTable book, Date borrow_time, Date remand_time,
-			int borrow_is) {
-		super();
-		this.borrow_id = borrow_id;
-		this.student = student;
-		this.book = book;
-		this.borrow_time = borrow_time;
-		this.remand_time = remand_time;
-		this.borrow_is = borrow_is;
-	}
+
 
 	public Date getRemand_time() {
 		return remand_time;

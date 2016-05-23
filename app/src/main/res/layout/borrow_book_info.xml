@@ -3,29 +3,11 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="wrap_content"
               android:layout_height="fill_parent"
+              android:layout_marginTop="50dp"
               android:background="@color/body_background"
               android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/toolashei"
-        android:background="@color/colorPrimary"
-        app:theme="@style/ToolbarTheme"
-        >
 
-
-        <TextView
-            android:id="@+id/title_actionbar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="图书详情"
-            android:textColor="@color/textclor"
-            android:textSize="22sp"/>
-
-
-    </android.support.v7.widget.Toolbar>
 
     <!-- Header -->
 
@@ -111,16 +93,7 @@
                         android:textSize="16.0sp">
                     </TextView>
                 </RelativeLayout>
-                <!-- 分隔条 -->
 
-                <View
-
-                    android:layout_width="fill_parent"
-                    android:layout_height="1.0dip"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/horizontal_separation_line">
-                </View>
-                <!-- 网站 -->
 
                 <View
                     android:layout_width="fill_parent"
@@ -298,7 +271,48 @@
                         android:textSize="16.0sp">
                     </TextView>
                 </RelativeLayout>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/horizontal_separation_line">
+                </View>
+                <!-- 网站 -->
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/user_huanshutianshu"
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10.0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10.0dp"
+                        android:gravity="center_vertical"
+                        android:text="距离还书还有："
+                        android:textColor="#FF7D899D"
+                        android:textSize="16.0sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/huanshustianshu"
+                        style="@style/normalText.span"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/viewfinder_laser"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/user_huanshutianshu"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_toRightOf="@id/user_huanshutianshu"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="lllllll"
+                        android:textSize="16.0sp">
+                    </TextView>
+                </RelativeLayout>
 
             </LinearLayout>
 
