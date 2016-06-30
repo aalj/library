@@ -45,6 +45,7 @@ recyclerView.getLayoutManager()).findLastCompletelyVisibleItemPosition()  返回
 onScrolled(RecyclerView recyclerView, int dx, int dy) 这个方法会实时的调用，同时传入的参数是移动距离
 
 onScrollStateChanged(RecyclerView recyclerView, int newState) 该方法是在recyclerview滑动状态改变是调用，分别有三个状态
+
 1. SCROLL_STATE_IDLE   当前recyclerview没有滚动
 2. SCROLL_STATE_SETTLING   RecyclerView目前滑动到最后一个位置,而不是外部控制。
 3. TOUCH_SLOP_DEFAULT  
